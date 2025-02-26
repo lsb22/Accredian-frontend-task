@@ -56,7 +56,7 @@ const Hero = () => {
 
   const handleFormSubmission = (data: RegisterData) => {
     axios
-      .post("http://localhost:3000/form", data)
+      .post(import.meta.env.BACKEND_URL, data)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
