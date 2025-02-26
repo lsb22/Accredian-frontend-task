@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
+import NavBar from "./components/NavBar";
 const App = () => {
-  return <Button variant="contained">Hello M-UI</Button>;
+  return <NavBar />;
 };
 
 export default App;
