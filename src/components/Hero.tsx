@@ -14,6 +14,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
 const schema = z.object({
   referrerName: z.string().min(4, { message: "Enter valid name" }),
@@ -52,6 +53,13 @@ const Hero = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleFormSubmission = (data: RegisterData) => {
+    axios
+      .post("http://localhost:3000/form", data)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   return (
     <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
       <Box display="flex" justifyContent="center" minHeight="80vh" mt={10}>
@@ -84,7 +92,7 @@ const Hero = () => {
                   component="form"
                   minWidth="350px"
                   onSubmit={handleSubmit((data) => {
-                    console.log(data);
+                    handleFormSubmission(data);
                     reset();
                     handleClose();
                   })}
