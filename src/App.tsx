@@ -1,6 +1,19 @@
+import { Box } from "@mui/material";
 import NavBar from "./components/NavBar";
 const App = () => {
-  return <NavBar />;
+  return (
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateAreas: `"nav nav" "hero hero"`,
+      }}
+    >
+      <Box sx={{ gridArea: "nav" }}>
+        <NavBar />
+      </Box>
+      <Box sx={{ gridArea: "hero" }}>Hero</Box>
+    </Box>
+  );
 };
 
 export default App;
