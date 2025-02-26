@@ -12,7 +12,17 @@ const Hero = () => {
           </Typography>
           <Typography fontSize="2.3rem">
             get a chance to win <br />
-            upto RS. 15,000
+            upto{" "}
+            <Box
+              component="span"
+              sx={{
+                backgroundColor: "#9635ce",
+                color: "white",
+                borderRadius: "2px",
+              }}
+            >
+              RS. 15,000
+            </Box>
           </Typography>
           <Box mt={2}>
             <Button variant="contained">Refer Now</Button>
